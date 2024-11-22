@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="election, voting, results, secure, real-time" />
+  <meta name="description" content="A modern election platform for secure voting and real-time results" />
+  <meta name="author" content="Election Portal" />
+  <title>Live Results</title>
+ 
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/results.css" />
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- Header Section -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="mailto:demo@gmail.com">
+              <i class="fa fa-envelope"></i>
+              <span>Email: voiceyourvote@gmail.comm</span>
+            </a>
+            <a href="tel:+0123455678990">
+              <i class="fa fa-phone"></i>
+              <span>Call: +01 123455678990</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="Election Portal Logo" />
+              <span>Election Portal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="vote.html">Vote Now</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="results.html">Live Results</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="register.html">Register to Vote</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+  <!-- Main Section -->
+  <div class="results_section">
+    <h1>Live Election Results</h1>
+
+    <!-- Election Status -->
+    <div class="election_status">
+      <p>Total Voters: <span id="totalVoters">1500</span></p>
+      <p>Votes Cast: <span id="votesCast">1200</span></p>
+      <p>Time Remaining: <span id="timeRemaining">01:30:00</span></p>
+    </div>
+
+    <!-- Candidate Results -->
+    <div class="candidate_results">
+      <div class="candidate_card">
+        <h2>Candidate A</h2>
+        <div class="vote_count">
+          <p>Votes: <span id="candidateAVotes">650</span></p>
+          <p>Percentage: <span id="candidateAPercentage">54%</span></p>
+        </div>
+        <div class="progress_bar">
+          <div class="progress" style="width: 54%;"></div>
+        </div>
+      </div>
+
+      <div class="candidate_card">
+        <h2>Candidate B</h2>
+        <div class="vote_count">
+          <p>Votes: <span id="candidateBVotes">550</span></p>
+          <p>Percentage: <span id="candidateBPercentage">46%</span></p>
+        </div>
+        <div class="progress_bar">
+          <div class="progress" style="width: 46%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real-Time Updates -->
+    <div class="live_updates">
+      <p>Last updated: <span id="lastUpdatedTime">10 seconds ago</span></p>
+      <button id="refreshButton">Refresh Results</button>
+    </div>
+
+    <!-- Election Graph -->
+    <div class="results_graph">
+      <!-- Pie or Bar chart would go here -->
+      <canvas id="voteChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer_section">
+    <div class="container text-center">
+      <p>&copy; 2024 Voice Your Vote Platform | All Rights Reserved</p>
+      <div class="social_icons">
+        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

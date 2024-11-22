@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="election, voting, results, secure, real-time" />
+  <meta name="description" content="A modern election platform for secure voting and real-time results" />
+  <meta name="author" content="Election Portal" />
+  <title>Voice Your Vote</title>
+
+  <!-- External CSS Libraries -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/vote.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- Header Section -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="mailto:demo@gmail.com">
+              <i class="fa fa-envelope"></i>
+              <span>Email: voiceyourvote@gmail.com</span>
+            </a>
+            <a href="tel:+0123455678990">
+              <i class="fa fa-phone"></i>
+              <span>Call: +01 123455678990</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="Election Portal Logo" />
+              <span>Voice Your Vote</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Information Center</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="vote.html">Vote Now</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="results.html">Live Results</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="register.html">Register to Vote</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+  <!-- Main Voting Section -->
+  <section class="vote_section py-5">
+    <div class="container">
+      <h1 class="text-center">Vote Now for the 2024 Election</h1>
+      <p class="text-center">Please select your candidate below and cast your vote.</p>
+      
+      <!-- Candidate List -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="images/candidate 1.jpeg" class="candidate_image" alt="Candidate 1">
+            <div class="card-body">
+              <h5 class="card-title">John Doe</h5>
+              <button class="btn btn-primary select-candidate" data-candidate="John Doe">Select</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+            <img src="images/candidate 2.jpeg" class="candidate_image" alt="Candidate 2">
+            <div class="card-body">
+              <h5 class="card-title">Jane Smith</h5>
+              <button class="btn btn-primary select-candidate" data-candidate="Jane Smith">Select</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vote Confirmation Section -->
+      <div class="text-center mt-4">
+        <button class="btn btn-success" id="confirmVoteBtn" style="display:none;">Confirm Vote</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer_section">
+    <div class="container text-center">
+      <p>&copy; 2024 Voice Your Vote Platform | All Rights Reserved</p>
+      <div class="social_icons">
+        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/vote.js"></script>
+
+  <!-- Custom script for handling voting actions -->
+  <script type="module">
+    import VoteController from "scripts\vote.js"; // Update the path as needed
+
+    $(document).ready(function() {
+      let selectedCandidate = null;
+
+      $('.select-candidate').click(function() {
+        selectedCandidate = $(this).data('candidate');
+        alert('You have selected ' + selectedCandidate);
+
+        // Show the confirm button once a candidate is selected
+        $('#confirmVoteBtn').show();
+      });
+
+      $('#confirmVoteBtn').click(async function() {
+        if (!selectedCandidate) {
+          alert('Please select a candidate before confirming.');
+          return;
+        }
+
+        const voterId = "sampleVoterId123"; // Replace with the actual logged-in voter ID
+
+        try {
+          // Attempt to cast the vote using the VoteController
+          await VoteController.castVote(voterId, selectedCandidate);
+          alert('Your vote has been successfully cast!');
+        } catch (error) {
+          alert('An error occurred while casting your vote: ' + error.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
