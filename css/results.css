@@ -1,0 +1,192 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0; /* Soft grey for text */
+    background-color: #2f2f2f; /* Dark background for industrial feel */
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Header Section */
+  header {
+    background-color: #1a1a1a; /* Darker background for header */
+    color: #f1f1f1; /* Light text color */
+    padding: 20px 0;
+    border-bottom: 2px solid #444;
+  }
+  
+  header .contact_nav a {
+    color: #f1f1f1;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  header .contact_nav a:hover {
+    color: #ff8a1d; /* Accent color */
+  }
+  
+  .navbar-brand img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ff8a1d; /* Accent color */
+  }
+
+/* Main Section */
+.results_section {
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.results_section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.election_status p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.candidate_results {
+    margin-top: 30px;
+}
+
+.candidate_card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.candidate_card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.candidate_card h2 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.vote_count p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.progress_bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progress {
+    background-color: #28a745; /* Green for votes */
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+.live_updates {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#refreshButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#refreshButton:hover {
+    background-color: #0056b3;
+}
+
+/* Results Graph Section */
+.results_graph {
+    margin-top: 40px;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #111; /* Dark footer */
+    color: #f1f1f1;
+    padding: 40px 0;
+  }
+  
+  footer .social_icons a {
+    color: #f1f1f1;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social_icons a:hover {
+    color: #ff8a1d; /* Accent color */
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .results_section {
+        padding: 20px;
+    }
+
+    .results_section h1 {
+        font-size: 2rem;
+    }
+
+    .candidate_card {
+        padding: 15px;
+    }
+
+    .candidate_card h2 {
+        font-size: 1.5rem;
+    }
+
+    .vote_count p {
+        font-size: 1rem;
+    }
+
+    #refreshButton {
+        font-size: 0.9rem;
+    }
+}
