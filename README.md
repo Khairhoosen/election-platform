@@ -44,6 +44,10 @@ o GitHub version control
 ##Contact
 Khairah Hoosen- khairahhoosen8@hmail.com
 
+##Access: 
+emails: elsjescott@gmail.com and ammarcanani@gmail.com
+password for both emails: test123
+
 
 
 
