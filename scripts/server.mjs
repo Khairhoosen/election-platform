@@ -16,21 +16,39 @@ app.post("/validate-email", async (req, res) => {
     return res.status(400).json({ error: "Email is required" });
   }
 
-  const url = `https://mailcheck.co/validate?email=${encodeURIComponent(email)}&apiKey=${apiKey}`;
+  const url = "https://api.mailcheck.co/v1/singleEmail:check";  // Correct endpoint for single email check
   console.log("Validation URL:", url);
 
+  const headers = {
+    "Authorization": `Bearer ${apiKey}`,
+    "Content-Type": "application/json"
+  };
+
+  const body = JSON.stringify({
+    email: email
+  });
+
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: headers,
+      body: body
+    });
+
     const data = await response.json();
 
     console.log("Response Status:", response.status);  // Log the status code
     console.log("Response Data:", data);  // Log the data from MailCheck API
 
     if (!response.ok) {
-      throw new Error(`Failed to validate email with MailCheck: ${data.error || 'Unknown error'}`);
+      throw new Error(`Failed to validate email with MailCheck: ${data.error?.message || 'Unknown error'}`);
     }
 
-    res.json({ isValid: data.isValid });
+    res.json({
+      trustRate: data.trustRate,
+      isNotDisposable: data.isNotDisposable,
+      isNotSmtpCatchAll: data.isNotSmtpCatchAll
+    });
   } catch (error) {
     console.error("Error validating email:", error.message);
     res.status(500).json({ error: "Server error validating email" });
