@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Show loading indicator
     loadingIndicator.style.display = "block";
 
-    // Get user input
+
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
@@ -31,12 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
         checkVotingStatus(user);
       })
       .catch((error) => {
-        // Handle errors
         alert(`Error: ${error.message}`);
         console.error(error);
       })
       .finally(() => {
-        // Hide loading indicator after the process
+
         loadingIndicator.style.display = "none";
       });
   });
@@ -48,10 +47,9 @@ function checkVotingStatus(user) {
     if (doc.exists && doc.data().hasVoted) {
       alert("You have already voted.");
       // Prevent voting or redirect to results page
-      window.location.href = "results.html";  // Redirect to results page
-    } else {
+      window.location.href = "results.html";  
       // Allow user to vote
-      window.location.href = "vote.html"; // Redirect to vote page
+      window.location.href = "vote.html"; 
     }
   });
 }

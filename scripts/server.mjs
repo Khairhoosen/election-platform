@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
-const port = 3000; // You can change the port if needed
+const port = 3000;
 const apiKey = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIyOTQ4MjYsImF1ZCI6Imh0dHBzOi8vbWFpbGNoZWNrLmVuZHBvaW50cy5tYWlsY2hlY2stMi1wcm9kLmNsb3VkLmdvb2ciLCJpc3MiOiJodHRwczovL2FwcC5tYWlsY2hlY2suY28iLCJzdWIiOiJjdzJua1NsZ3JwVnA5YUg3VmpScUlWSTFGMHYyIiwianRpIjoiZTg4N2U1ZWMtMjJlNy00ZjgyLTg5Y2YtZDc4MTY0MWY2ZDdmIn0.ich6YrTuxSp39yMl47Q9wE3rcbvGS4cNC14r2O6ooK9Cq2m4zNOxansU0Kgk775ksEAVp3cMynLdqZPaTMFsCDFogLzNU8SsleTKHLC_G7eKm7zCnddcZRzy0d2BgD6yHlui_gRMvAGTgtF5YO2OiXjc58h-yZkljPfT1cKZW4Rpj_NP0VYeqG6XQJsb0hOoCSuusQP9UAdAIIqIeclvTjblxP34BHi5g4RhSWEmrIa7fslOQfPoS8rt42I-oqJGt8TRtYgFLmkJczN06QxcvOwBP5-Aj6d5M40dWR-lx_77T_A3ODJWrrwfbtIn6tHgc9D6hZ1jMoLoUlye2DOK0Q"; // Replace with your MailCheck API key
 
 app.use(cors({ origin: '*' })); 
@@ -16,7 +16,7 @@ app.post("/validate-email", async (req, res) => {
     return res.status(400).json({ error: "Email is required" });
   }
 
-  const url = "https://api.mailcheck.co/v1/singleEmail:check";  // Correct endpoint for single email check
+  const url = "https://api.mailcheck.co/v1/singleEmail:check";
   console.log("Validation URL:", url);
 
   const headers = {

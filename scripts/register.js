@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Validate email via the server proxy
-      const response = await fetch("http://127.0.0.1:3000/validate-email", {
+      const response = await fetch("http://localhost:3000/validate-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!response.ok || !data.isValid) {
         alert("Invalid or disposable email address. Please use a valid email.");
-        loadingIndicator.style.display = "none";  // Hide loading indicator
+        loadingIndicator.style.display = "none";
         return;
       }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       alert("Error validating email.");
       console.error("Validation error:", error);
-      loadingIndicator.style.display = "none";  // Hide loading indicator
+      loadingIndicator.style.display = "none"; 
     }
   });
 });
