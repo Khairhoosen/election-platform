@@ -37,6 +37,8 @@ header .contact_nav a:hover {
   margin-right: 15px;
 }
 
+
+
 .navbar-nav .nav-link {
   color: #f1f1f1;
   text-transform: uppercase;
@@ -69,6 +71,7 @@ header .contact_nav a:hover {
 }
 
 .hero_section .hero_img img {
+  background-color: rgb(240, 234, 234);
   max-width: 60%;
   height: auto;
   border-radius: 8px;
